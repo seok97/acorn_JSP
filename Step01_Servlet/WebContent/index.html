@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>인덱스 페이지</h1>
+	<ul>
+	<li><a href="hello">hello 요청</a></li>
+	<li><a href="/Step01_Servlet/hello">hello 요청</a></li>
+	<li><a href="hello.html">hello.html</a></li>
+	<li><a href="study.html">study</a></li>
+	<li><a href="/Step01_Servlet/study.html">study</a></li>
+	<li><a href="/Step01_Servlet/sub/fortune.html">fortune.html</a></li>
+	<li><a href="/Step01_Servlet/sub/fortune">fortune</a></li>
+	<li><a href="/Step01_Servlet/sub/fortune.jsp">fortune.jsp</a></li>
+	<li><a href="test.html">테스트 페이지</a></li>
+	<li><a href="/Step01_Servlet/send?msg=hello">Get방식 전송 테스트</a></li>
+	<li><a href="/Step01_Servlet/send.jsp?msg=bye">Get방식 전송 테스트</a></li>
+	<li><a href="/Step01_Servlet/shop/buy.jsp?num=999&type=A">999번 물품 구입하기</a></li>
+	
+	</ul>
+	
+	<h1>폼 테스트</h1>
+	<form action="/Step01_Servlet/send" method="get">
+	<label for="msg">메세지</label>
+	<input type="text" id="msg" name="msg" />
+	<button type="submit">전송</button>
+	</form>
+	
+	<br/>
+	
+	<form action="/Step01_Servlet/send2" method="post">
+	<label for="msg">메세지</label>
+	<input type="text" id="msg" name="msg"/>
+	<button tyep="submit">전송</button>
+	</form>
+	
+	<br/>
+	<form action="/Step01_Servlet/test/send2.jsp" method="post">
+	<label for="msg">메세지</label>
+	<input type="text" id="msg" name="msg"/>
+	<button tyep="submit">전송</button>
+	</form>
+	
+	
+</body>
+</html>
