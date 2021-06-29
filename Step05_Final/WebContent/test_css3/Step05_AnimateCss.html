@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Step06_AnimateCss.html</title>
+    <!-- 외부 css 로딩하기  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      /* 로딩된 css 에는 애니메이션의 이름에 해당되는 키프레임이 모두 정의 되어 있어서 
+      원하는 키프레임을 우리가 원하는 대로 적용 할 수 있다.
+    */
+      #one {
+        animation-name: bounce;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="animate__animated animate__bounce">Animate Css 테스트</h1>
+    <h1 id="one">내가 직접 키프레임 적용 하기</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque numquam
+      necessitatibus ad asperiores quis aliquam assumenda eveniet tempore
+      aperiam perspiciatis ipsa dignissimos deserunt nulla quisquam quos! Quidem
+      error fuga in.
+    </p>
+    <button id="myBtn" class="animate__animated">마우스를 올려보셈</button>
+    <script>
+      //버튼에 마우스를 올렸을때
+      document
+        .querySelector("#myBtn")
+        .addEventListener("mouseover", function () {
+          // animate__swing 클래스를 추가해서 애니메이션을 동작 시키고
+          this.classList.add("animate__swing")
+        })
+
+      //버튼에 적용된 애니메이션이 끝났을때
+      document
+        .querySelector("#myBtn")
+        .addEventListener("animationend", function () {
+          // animate__swing 클래스를 제거해서
+          //다음번에 또 클래스가 추가 될때 애니메이션이 동작되도록 한다.
+          this.classList.remove("animate__swing")
+        })
+    </script>
+  </body>
+</html>

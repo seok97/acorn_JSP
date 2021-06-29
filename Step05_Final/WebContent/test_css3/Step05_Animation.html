@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #0f0;
+        border: 1px solid red;
+        transform-origin: 100% 50%;
+      }
+
+      @keyframes myAni {
+        /* 키프레임의 초기 상태 */
+        0% {
+          background-color: #0f0;
+          transform: rotate(0deg);
+        }
+        50% {
+          background-color: #0f0;
+          transform: rotate(0deg) scale(0.5);
+        }
+        /* 키프레임이 모두 진행되었을때 css */
+        100% {
+          background-color: #ff0;
+          transform: rotate(360deg) scale(1.5);
+        }
+      }
+
+      .box:hover {
+        animation-name: myAni;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes drop {
+        0% {
+          transform: translateY(-300px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      #one {
+        animation-name: drop;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <h1>애니메이션 keyfram 테스트</h1>
+    <div class="box"></div>
+    <h1 id="one">위에서 떨어지는 제목</h1>
+
+    <h1 class="animate__animated animate__bounce">An animated element</h1>
+    <button id="mybtn">click this !</button>
+    <script>
+      document.querySelector("#mybtn").addEventListener("hover", function () {
+        this.addAttribute("class", "animate__animated animate__bounce")
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Step04_3dTransform.html</title>
+    <style>
+      .wrapper {
+        /* 컨텐츠와 내 시선 사이의 거리 */
+        perspective: 500px;
+        /* .wrapper 에서의  시선의 위치 (원점)*/
+        perspective-origin: 50% 50%;
+        border: 1px solid blue;
+      }
+      .target {
+        /* 3d transform 을 하겠다고 선언 */
+        transform-style: preserve-3d;
+        /* .target 에서 x, y, z 축이 만나는 위치 */
+        transform-origin: 50% 50%;
+        width: 200px;
+        margin: 0 auto;
+        border: 1px solid green;
+        transition: transform 0.4s ease-out;
+      }
+      .target img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">회전 회오리</button>
+    <div class="wrapper">
+      <div class="target" id="one">
+        <img src="../images/image1.png" />
+      </div>
+    </div>
+    <script>
+      /* 버튼 클릭시 . .target div 를 z 축 기준으로 10도씩 회전 시키기
+       */
+      let angle = 0
+      document.querySelector(".btn").addEventListener("click", function () {
+        angle += 10
+        document.querySelector(
+          ".target"
+        ).style.transform = `rotateZ(${angle}deg)`
+      })
+    </script>
+  </body>
+</html>
