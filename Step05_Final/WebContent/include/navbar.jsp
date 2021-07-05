@@ -32,6 +32,10 @@
                  <li class="nav-item">
                       <a class="nav-link <%=thisPage.equals("cafe") ? "active" : "" %>" href="<%=request.getContextPath() %>/cafe/list.jsp">카페</a>
                  </li>
+                 <li class="nav-item">
+                      <a class="nav-link <%=thisPage.equals("gallery") ? "active" : "" %>" href="<%=request.getContextPath() %>/gallery/list.jsp">갤러리</a>
+                 </li>
+                 
         
                </ul>
                <%if(id==null){ %>
