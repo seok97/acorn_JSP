@@ -44,3 +44,13 @@ CREATE TABLE board_cafe_comment(
 );
 
 CREATE SEQUENCE board_cafe_comment_seq;
+
+CREATE TABLE board_gallery(
+   num NUMBER PRIMARY KEY,
+   writer VARCHAR2(100),
+   caption VARCHAR2(100),  -- 이미지에 대한 설명
+   imagePath VARCHAR2(100),
+   regdate DATE
+);
+
+CREATE SEQUENCE board_gallery_seq;
